@@ -1,0 +1,17 @@
+{
+  "bootScripts": [
+    "ext/cookie",
+    "ext/jquery",
+    "conf",
+    "templater/templater",
+    "misc"
+  ],
+  "scripts": {
+    "home": [
+      "mate/main"
+    ],
+    "admin": [
+      "profes/razonamientos/crear"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+<div id="Cuenta" class='Cuenta Template'><span>{A} {operacion} {B} = </span><input type="text"></div>

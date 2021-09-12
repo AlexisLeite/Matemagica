@@ -1,0 +1,456 @@
+$mainColor: darkslategray
+$mainBackground: white
+$s-min: 20
+$s-max: 70
+$l-min: 30
+$l-max: 90
+
+body
+  text-align: center
+  background-color: $mainColor
+
+#Admin
+  #Preguntas
+    text-align: left
+
+  input, textarea 
+    display: block
+    width: 100%
+    padding: 5px
+    margin: 5px 0
+    box-sizing: border-box
+
+  input[type="reset"]
+    background: beige
+
+  .Pregunta
+    input, textarea
+      width: calc(100% - 90px)
+
+      
+    input[type="button"].Subir, input[type="button"].Bajar, input[type="button"].Eliminar 
+      float: right
+      clear: right
+      position: relative
+      top: -60pt
+      width: 80px 
+      font-size: 10.6pt
+      border: 1px solid #ccc
+      margin: 0
+      padding: 1px
+
+#AreaTrabajo
+  margin-top: 9vh
+  text-align: center
+
+#EjercicioTablas
+  width: 100%
+  margin: 0
+  background: beige
+
+  input 
+    font: bold 14pt courier new
+    text-align: center
+    width: 100%
+
+  th, td
+    width: calc(100% / 12)
+
+  & .Highlight
+    background: blue
+    color: white
+  
+  td
+    &.Correcto input
+      background: chartreuse
+    &.Incorrecto input
+      background: crimson
+      color: white
+
+  /*tr:nth-child(odd)
+    background: darkcyan*/
+
+#ListadoProfesores
+
+  list-style: none
+  width: 100%
+  margin: auto
+    top: 30vh
+  display: inline-flex
+  justify-content: center
+  padding: 30px
+
+
+  &.min
+    position: fixed
+    z-index: 99
+    top: 0
+    left: 0
+    padding: 4px
+    align-items: top
+    height: calc(5vh - 10px)
+    font-size: 6px
+    margin-top: auto
+    padding-top: 1vh
+    
+    li
+      height: 7vh  
+      width: 7vh
+
+      &:hover
+        width: 15vh
+        font-size: 10pt
+        height: 15vh
+
+  li
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border: 4px solid black
+      radius: 10px
+    margin:
+      left: 5px
+      right: 5px
+    font-size: 12pt
+    background: beige
+    padding: 10px
+    cursor: pointer
+    color: darkblue
+    min-width: 18vh
+    height: 18vh
+
+    &:hover
+      background: white
+      filter: drop-shadow(0 0 1rem rgba(255,255,255,0.2))
+      color: blue
+
+#ListadoRazonamientosExistentes
+  overflow: auto
+  max-height: 200px
+  margin-top: 10px
+
+  .ItemListado 
+    text-align: left
+    padding: 7px 40px
+    border: none
+    border-bottom: 1px solid rgba(0,0,0,0.3)
+
+    &:last-child
+      border: none
+  
+  button
+    float: right
+    margin: 0 0 0 10px
+    border: 1px solid
+    border-color: darkslategray
+    background: beige
+    color: darkslategray
+    font-family: monospace
+
+    &:hover
+      background: azure
+
+.VentanaEmergente
+  position: fixed
+  z-index: 99
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  overflow: none
+  padding: 50px
+  background: rgba(0,0,0,0.4)
+
+  .Contenido
+    background: white
+    width: 100%
+    max-height: 100%
+    overflow: auto
+    text-align: left
+    padding: 50px
+
+    input
+      color: white
+      background-color: darkslategray
+      padding: 3px 20px
+      border-radius: 9px
+
+    .Text 
+      height: 35px  
+      display: flex
+
+      input
+        flex-grow: 5
+        margin:
+          left: 10px
+          bottom: 3px
+
+    .Submit
+      padding: 10px
+      
+      input
+        width: 100%
+
+.Cuenta
+  padding: 5px 0 5px 50px
+  background: darkcyan
+  font: large cursive
+  text-align: left
+
+  span
+    width: 200px
+    display: inline-block
+
+  input 
+    width: calc(100% - 210px)
+    color: white
+
+  &:nth-child(even)
+    background: beige
+    input 
+      color: black
+
+  &:nth-child(odd)
+    color: white
+
+.Geometria
+  padding: 0
+
+  .Controles
+    input
+      background: rgb(245 245 220 / 34%)
+      padding: 10px
+      margin: 3px
+      top: -60px
+      float: left
+      position: relative
+
+      &:hover
+        background: rgb(245 245 220 / 100%)
+
+  .GeometryCanvas
+    background: #333
+    margin: 0 0 10px 0
+
+  .GeometryPercenter
+    background: darkgoldenrod
+    width: 120px
+    margin: auto
+    padding: 5px 0px
+    color: white
+    border: 4px solid
+    border-color: dimgray
+    text-align: center
+    font: 15pt arial
+    display: none
+
+  .PercenterBarra
+    width: 100%
+
+  .Preguntas
+    position: absolute
+    z-index: 1
+
+    input
+      margin: 3px
+      padding: 5px
+      border: 3px solid black
+      width: 80px
+      border-radius: 8px
+      text-align: center
+      display: none
+      background: rgb(245, 245, 220)
+
+      &.current
+        padding: 10px
+        border-width: 5px
+        border-radius: 12px
+
+  .Respuestas
+    div
+      display: inline-block
+      width: 30px
+      height: 30px
+      margin: 0 2px
+      border-radius: 4px
+      border: 1px solid #777
+      background: rgb(230,230,242)
+      background: linear-gradient(144deg, rgba(230,230,242,1) 0%, rgba(255,255,255,1) 39%, rgba(255,255,255,1) 66%, rgba(191,191,191,1) 100%)
+
+      &.Correcto
+        background: darkgreen
+      
+      &.Incorrecto
+        background: crimson
+
+  .Tareas
+    margin: 0
+    
+    .Task
+      text-align: left
+
+      &.done, &.permanentDone
+        text-decoration: line-through!important
+        color: #888!important
+        font-weight: normal!important
+
+      &.left
+        color: #555
+
+      &.current
+        color: black
+        text-decoration: underline
+        font-weight: bold
+
+.Hide
+  display: none
+
+.LetraRazonamiento
+  text-align: left
+  text-indent: 0
+
+  h3
+    /*border-bottom: 1px solid rgba(1,1,1,0.3)*/
+    padding: 0
+    margin: 0
+    font-family: revert
+    font-size: larger
+    color: $mainColor
+
+  &>div:not(.Preguntas)
+    padding: 0px 0px 4px 30px
+
+.Preguntas
+
+  &>div
+    padding: 4px 0px 4px 40px
+
+    input
+      background: rgba(0, 0, 0, 0.05)
+      width: calc(100% - 10px) !important
+
+    &:nth-child(odd)
+      background: darkcyan
+      color: white
+
+      input
+        color: white
+        &::placeholder
+          color: rgba(255,255,255,0.7)
+
+    &:nth-child(even)
+      background: beige
+
+      input
+        &::placeholder
+          color: rgba(0,0,0,0.7)
+
+.QueHoraEs
+  display: inline-block
+  width: 200px
+  padding: 10px
+
+  .Reloj
+    margin-bottom: 10px
+
+  input
+    width: 80px
+    text-align: center
+
+.EjercicioCuantoTiempo
+  text-align: center
+
+  h3
+    margin: 20px
+
+  .RelojesEjercicio
+    text-align: center
+
+    .CuantoTiempo0, .CuantoTiempo1, .CuantoTiempo2
+      margin: 0 20px 20px 0
+      padding: 20px
+      background: beige
+      border: 2px solid
+      border-color: black
+      display: inline-block
+
+      input
+        background: white
+        text-align: center
+
+    .Reloj1
+      display: inline-block
+
+    .Reloj2
+      display: inline-block
+
+.SubAreaTrabajo
+  a.Cerrar
+    float: right
+    border-radius: 1px
+    background: red
+    padding: 0px 3px
+    font-family: arial black
+    font-size: 0.8em
+    transform: scaleX(1.2)
+    color: white !important
+    cursor: pointer
+    border: 2px solid black
+
+    &:hover, &:active, &:focus
+      box-shadow: 0px 0px 5px #0009
+
+  width: 80%
+  margin: auto auto 10px auto
+  border: 10px solid black
+  background: $mainBackground
+  padding: 10px
+
+  p
+    text-indent: 30px
+    text-align: left
+    margin: 0
+      bottom: 5px
+
+  h2
+    font-family: cursive
+    font-size: x-large
+    text-decoration: underline
+    font-weight: bold
+    color: $mainColor
+
+  h3
+    font-family: cursive
+    font-size: large
+    text-decoration: none
+    font-weight: bold
+    color: $mainColor
+    text-align: left
+    text-indent: 30px
+
+  h4
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-size: medium
+    text-decoration: none
+    font-weight: bold
+    color: $mainColor
+    text-align: left
+
+  &>div
+    border-top: 2px solid black
+    padding-top: 10px
+    border-color: darkkhaki
+
+input, textarea
+  border: 0
+  border-bottom: 1px solid #888
+  background: rgba(0,0,0,0.05)
+
+  &.Correcto
+    background: darkgreen !important
+    color: white !important
+    
+  &.Incorrecto
+    background: crimson !important
+    color: white !important
+

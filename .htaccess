@@ -1,0 +1,10 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^.*?js$ [NC]
+RewriteRule ^ ./src/scripts/scripter/main.php [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule	^([^=]*)$	./?ruta=$1	[L,QSA,NC]

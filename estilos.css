@@ -1,0 +1,455 @@
+body {
+  text-align: center;
+  background-color: darkslategray;
+}
+
+#Admin #Preguntas {
+  text-align: left;
+}
+#Admin input, #Admin textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+#Admin input[type=reset] {
+  background: beige;
+}
+#Admin .Pregunta input, #Admin .Pregunta textarea {
+  width: calc(100% - 90px);
+}
+#Admin .Pregunta input[type=button].Subir, #Admin .Pregunta input[type=button].Bajar, #Admin .Pregunta input[type=button].Eliminar {
+  float: right;
+  clear: right;
+  position: relative;
+  top: -60pt;
+  width: 80px;
+  font-size: 10.6pt;
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 1px;
+}
+
+#AreaTrabajo {
+  margin-top: 9vh;
+  text-align: center;
+}
+
+#EjercicioTablas {
+  width: 100%;
+  margin: 0;
+  background: beige;
+  /*tr:nth-child(odd)
+  * background: darkcyan*/
+}
+#EjercicioTablas input {
+  font: bold 14pt courier new;
+  text-align: center;
+  width: 100%;
+}
+#EjercicioTablas th, #EjercicioTablas td {
+  width: calc(100% / 12);
+}
+#EjercicioTablas .Highlight {
+  background: blue;
+  color: white;
+}
+#EjercicioTablas td.Correcto input {
+  background: chartreuse;
+}
+#EjercicioTablas td.Incorrecto input {
+  background: crimson;
+  color: white;
+}
+
+#ListadoProfesores {
+  list-style: none;
+  width: 100%;
+  margin: auto;
+  margin-top: 30vh;
+  display: inline-flex;
+  justify-content: center;
+  padding: 30px;
+}
+#ListadoProfesores.min {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  padding: 4px;
+  align-items: top;
+  height: calc(5vh - 10px);
+  font-size: 6px;
+  margin-top: auto;
+  padding-top: 1vh;
+}
+#ListadoProfesores.min li {
+  height: 7vh;
+  width: 7vh;
+}
+#ListadoProfesores.min li:hover {
+  width: 15vh;
+  font-size: 10pt;
+  height: 15vh;
+}
+#ListadoProfesores li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid black;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 12pt;
+  background: beige;
+  padding: 10px;
+  cursor: pointer;
+  color: darkblue;
+  min-width: 18vh;
+  height: 18vh;
+}
+#ListadoProfesores li:hover {
+  background: white;
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.2));
+  color: blue;
+}
+
+#ListadoRazonamientosExistentes {
+  overflow: auto;
+  max-height: 200px;
+  margin-top: 10px;
+}
+#ListadoRazonamientosExistentes .ItemListado {
+  text-align: left;
+  padding: 7px 40px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+#ListadoRazonamientosExistentes .ItemListado:last-child {
+  border: none;
+}
+#ListadoRazonamientosExistentes button {
+  float: right;
+  margin: 0 0 0 10px;
+  border: 1px solid;
+  border-color: darkslategray;
+  background: beige;
+  color: darkslategray;
+  font-family: monospace;
+}
+#ListadoRazonamientosExistentes button:hover {
+  background: azure;
+}
+
+.VentanaEmergente {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: none;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.VentanaEmergente .Contenido {
+  background: white;
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  text-align: left;
+  padding: 50px;
+}
+.VentanaEmergente .Contenido input {
+  color: white;
+  background-color: darkslategray;
+  padding: 3px 20px;
+  border-radius: 9px;
+}
+.VentanaEmergente .Contenido .Text {
+  height: 35px;
+  display: flex;
+}
+.VentanaEmergente .Contenido .Text input {
+  flex-grow: 5;
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+.VentanaEmergente .Contenido .Submit {
+  padding: 10px;
+}
+.VentanaEmergente .Contenido .Submit input {
+  width: 100%;
+}
+
+.Cuenta {
+  padding: 5px 0 5px 50px;
+  background: darkcyan;
+  font: large cursive;
+  text-align: left;
+}
+.Cuenta span {
+  width: 200px;
+  display: inline-block;
+}
+.Cuenta input {
+  width: calc(100% - 210px);
+  color: white;
+}
+.Cuenta:nth-child(even) {
+  background: beige;
+}
+.Cuenta:nth-child(even) input {
+  color: black;
+}
+.Cuenta:nth-child(odd) {
+  color: white;
+}
+
+.Geometria {
+  padding: 0;
+}
+.Geometria .Controles input {
+  background: rgba(245, 245, 220, 0.34);
+  padding: 10px;
+  margin: 3px;
+  top: -60px;
+  float: left;
+  position: relative;
+}
+.Geometria .Controles input:hover {
+  background: beige;
+}
+.Geometria .GeometryCanvas {
+  background: #333;
+  margin: 0 0 10px 0;
+}
+.Geometria .GeometryPercenter {
+  background: darkgoldenrod;
+  width: 120px;
+  margin: auto;
+  padding: 5px 0px;
+  color: white;
+  border: 4px solid;
+  border-color: dimgray;
+  text-align: center;
+  font: 15pt arial;
+  display: none;
+}
+.Geometria .PercenterBarra {
+  width: 100%;
+}
+.Geometria .Preguntas {
+  position: absolute;
+  z-index: 1;
+}
+.Geometria .Preguntas input {
+  margin: 3px;
+  padding: 5px;
+  border: 3px solid black;
+  width: 80px;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+  background: beige;
+}
+.Geometria .Preguntas input.current {
+  padding: 10px;
+  border-width: 5px;
+  border-radius: 12px;
+}
+.Geometria .Respuestas div {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 2px;
+  border-radius: 4px;
+  border: 1px solid #777;
+  background: #e6e6f2;
+  background: linear-gradient(144deg, #e6e6f2 0%, white 39%, white 66%, #bfbfbf 100%);
+}
+.Geometria .Respuestas div.Correcto {
+  background: darkgreen;
+}
+.Geometria .Respuestas div.Incorrecto {
+  background: crimson;
+}
+.Geometria .Tareas {
+  margin: 0;
+}
+.Geometria .Tareas .Task {
+  text-align: left;
+}
+.Geometria .Tareas .Task.done, .Geometria .Tareas .Task.permanentDone {
+  text-decoration: line-through !important;
+  color: #888 !important;
+  font-weight: normal !important;
+}
+.Geometria .Tareas .Task.left {
+  color: #555;
+}
+.Geometria .Tareas .Task.current {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.Hide {
+  display: none;
+}
+
+.LetraRazonamiento {
+  text-align: left;
+  text-indent: 0;
+}
+.LetraRazonamiento h3 {
+  /*border-bottom: 1px solid rgba(1,1,1,0.3)*/
+  padding: 0;
+  margin: 0;
+  font-family: revert;
+  font-size: larger;
+  color: darkslategray;
+}
+.LetraRazonamiento > div:not(.Preguntas) {
+  padding: 0px 0px 4px 30px;
+}
+
+.Preguntas > div {
+  padding: 4px 0px 4px 40px;
+}
+.Preguntas > div input {
+  background: rgba(0, 0, 0, 0.05);
+  width: calc(100% - 10px) !important;
+}
+.Preguntas > div:nth-child(odd) {
+  background: darkcyan;
+  color: white;
+}
+.Preguntas > div:nth-child(odd) input {
+  color: white;
+}
+.Preguntas > div:nth-child(odd) input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.Preguntas > div:nth-child(even) {
+  background: beige;
+}
+.Preguntas > div:nth-child(even) input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.QueHoraEs {
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+}
+.QueHoraEs .Reloj {
+  margin-bottom: 10px;
+}
+.QueHoraEs input {
+  width: 80px;
+  text-align: center;
+}
+
+.EjercicioCuantoTiempo {
+  text-align: center;
+}
+.EjercicioCuantoTiempo h3 {
+  margin: 20px;
+}
+.EjercicioCuantoTiempo .RelojesEjercicio {
+  text-align: center;
+}
+.EjercicioCuantoTiempo .RelojesEjercicio .CuantoTiempo0, .EjercicioCuantoTiempo .RelojesEjercicio .CuantoTiempo1, .EjercicioCuantoTiempo .RelojesEjercicio .CuantoTiempo2 {
+  margin: 0 20px 20px 0;
+  padding: 20px;
+  background: beige;
+  border: 2px solid;
+  border-color: black;
+  display: inline-block;
+}
+.EjercicioCuantoTiempo .RelojesEjercicio .CuantoTiempo0 input, .EjercicioCuantoTiempo .RelojesEjercicio .CuantoTiempo1 input, .EjercicioCuantoTiempo .RelojesEjercicio .CuantoTiempo2 input {
+  background: white;
+  text-align: center;
+}
+.EjercicioCuantoTiempo .RelojesEjercicio .Reloj1 {
+  display: inline-block;
+}
+.EjercicioCuantoTiempo .RelojesEjercicio .Reloj2 {
+  display: inline-block;
+}
+
+.SubAreaTrabajo {
+  width: 80%;
+  margin: auto auto 10px auto;
+  border: 10px solid black;
+  background: white;
+  padding: 10px;
+}
+.SubAreaTrabajo a.Cerrar {
+  float: right;
+  border-radius: 1px;
+  background: red;
+  padding: 0px 3px;
+  font-family: arial black;
+  font-size: 0.8em;
+  transform: scaleX(1.2);
+  color: white !important;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.SubAreaTrabajo a.Cerrar:hover, .SubAreaTrabajo a.Cerrar:active, .SubAreaTrabajo a.Cerrar:focus {
+  box-shadow: 0px 0px 5px #0009;
+}
+.SubAreaTrabajo p {
+  text-indent: 30px;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.SubAreaTrabajo h2 {
+  font-family: cursive;
+  font-size: x-large;
+  text-decoration: underline;
+  font-weight: bold;
+  color: darkslategray;
+}
+.SubAreaTrabajo h3 {
+  font-family: cursive;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+  color: darkslategray;
+  text-align: left;
+  text-indent: 30px;
+}
+.SubAreaTrabajo h4 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: medium;
+  text-decoration: none;
+  font-weight: bold;
+  color: darkslategray;
+  text-align: left;
+}
+.SubAreaTrabajo > div {
+  border-top: 2px solid black;
+  padding-top: 10px;
+  border-color: darkkhaki;
+}
+
+input, textarea {
+  border: 0;
+  border-bottom: 1px solid #888;
+  background: rgba(0, 0, 0, 0.05);
+}
+input.Correcto, textarea.Correcto {
+  background: darkgreen !important;
+  color: white !important;
+}
+input.Incorrecto, textarea.Incorrecto {
+  background: crimson !important;
+  color: white !important;
+}
+
+/*# sourceMappingURL=estilos.css.map */
